@@ -1,0 +1,66 @@
+.btn-success {
+  background: #5CB85C;
+  color: white;
+  border: 1px solid transparent;
+  &:hover {
+    background: white;
+    color: #5CB85C;
+    border: 1px solid #5CB85C;
+  }
+}
+
+.btn-danger {
+  background: #D9534F;
+  color: white;
+  border: 1px solid transparent;
+  &:hover {
+    background: white;
+    color: #D9534F;
+    border: 1px solid #D9534F;
+  }
+}
+
+.ant-form-item {
+  margin-bottom: 0px;
+}
+
+#discount {
+  .ant-col-sm-16{
+    display: block;
+    max-width: 100%;
+  } 
+  .ant-space {
+    .ant-space-item {
+      flex-grow: 1;
+    }
+  }
+
+}
+
+.ant-descriptions-item-label {
+  width: 25%;
+}
+
+.ant-select-disabled.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  color: black;
+  background: white;
+}
+
+.ant-picker.ant-picker-disabled {
+  background: white;
+}
+
+.ant-picker-input > input[disabled] {
+  color: black;
+
+}
+
+.ant-modal-wrap {
+  z-index: 1200;
+}
+.ant-modal-mask {
+  z-index: 1040;
+}
+.ant-notification{
+  z-index: 1041 !important;
+}
