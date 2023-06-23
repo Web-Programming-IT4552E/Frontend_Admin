@@ -1,0 +1,24 @@
+// todo: disabled button styles
+button {
+  &:disabled {
+    cursor: default;
+  }
+  &.disabled {
+    cursor: default;
+  }
+}
+
+// todo: brand button icon margin
+.btn-brand:not(:only-child) {
+  .c-icon {
+    margin-top: 0 !important;
+  }
+}
+.breadcrumb-item {
+  a {
+    color: rebeccapurple;
+  }
+}
+.c-sidebar {
+  background: #2A2B36 !important;
+}
