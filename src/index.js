@@ -15,20 +15,7 @@ import "antd/dist/antd.css";
 import "src/services/i18n";
 import "./index.scss";
 
-import { getProvinceThunk } from "src/actions/province";
-import { getDistrictThunk } from "src/actions/district";
-import { getCarTypeThunk } from "src/actions/carType";
-import { getServicesThunk } from "src/actions/services";
-import { getAirportThunk } from "src/actions/airport";
-import { getCategoryThunk } from "src/actions/category";
-
 React.icons = icons;
-
-// store.dispatch(getProvinceThunk);
-// store.dispatch(getDistrictThunk);
-// store.dispatch(getCarTypeThunk);
-// store.dispatch(getServicesThunk);
-// store.dispatch(getAirportThunk);
 
 ReactDOM.render(
   <Provider store={store}>

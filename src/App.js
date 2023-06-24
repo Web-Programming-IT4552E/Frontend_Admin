@@ -22,7 +22,6 @@ const App = () => {
   const user = useSelector((state) => state.user).data;
   const dispatch = useDispatch();
   useEffect(async () => {
-    console.log(user);
     dispatch(getCategoryThunk());
   }, [user]);
   return (
