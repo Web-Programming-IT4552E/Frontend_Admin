@@ -45,6 +45,7 @@ const ListCustomers = ({ t }) => {
       title: t("Rank"),
       dataIndex: "rank",
       render: (status = 0) => {
+        console.log(status, Status.rank);
         let color = Status.rank.filter((item) => item.id == status)[0]?.color;
         let name = Status.rank.filter((item) => item.id == status)[0]?.name;
         return (
@@ -109,11 +110,8 @@ const ListCustomers = ({ t }) => {
       },
     },
   ];
-  useEffect(() => {
-    console.log(pagination);
-  }, [pagination]);
+
   const handleTableChange = (pagination, filters, sorter) => {
-    console.log("Hello filters", filters);
     let key = pagination.pageSize * (pagination.current - 1) + 1;
     getListCustomers(
       { ...pagination, page: pagination.current },
@@ -152,7 +150,6 @@ const ListCustomers = ({ t }) => {
 
   useEffect(() => {
     getListCustomers(pagination, {}, (res) => {
-      console.log(res);
       if (res.status == 200) {
         let key = 1;
         res.data.data.forEach((item) => {

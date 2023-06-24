@@ -40,15 +40,10 @@ const CustomerDetail = ({ match, t }) => {
   const [statusName, setStatusName] = useState("Active");
   const [statusColor, setStatusColor] = useState("green");
 
+  console.log(data);
+
   useEffect(() => {
     getCustomerDetail(match.params.id, (res) => {
-      console.log(
-        res.data,
-        "Rank",
-        Status.rank,
-        res.data.rank,
-        Status.rank.filter((item) => item.id == res.data.rank)[0].color
-      );
       if (res.status === 200) {
         setData(res.data);
         setStatusName(
@@ -158,10 +153,16 @@ const CustomerDetail = ({ match, t }) => {
                 block
                 htmlType="submit"
                 className={`${
-                  data?.status == 1 ? "btn-danger" : "btn-success"
+                  data?.status == 1 || data?.status == 0
+                    ? "btn-danger"
+                    : "btn-success"
                 }`}
               >
-                {t(`${data?.status == 1 ? "Block" : "Unblock"}`)}
+                {t(
+                  `${
+                    data?.status == 1 || data?.status == 0 ? "Block" : "Unblock"
+                  }`
+                )}
               </Button>
             </Form>
           </CCardBody>

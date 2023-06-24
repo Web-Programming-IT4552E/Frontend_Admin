@@ -36,7 +36,7 @@ export function getListCustomers(pagination, filters, callback) {
 
 export function getCustomerDetail(customer_id, callback) {
   const axios = AxiosConfig();
-  let api = `/customers/${customer_id}`;
+  let api = `/customer/${customer_id}`;
   axios
     .get(api)
     .then((res) => {
@@ -62,9 +62,9 @@ export function updateCustomer(customer_id, isBlock, callback) {
   const axios = AxiosConfig();
   let api = ``;
   if (isBlock) {
-    api = `/customers/unblock/${customer_id}`;
+    api = `/customer/unblock/${customer_id}`;
   } else {
-    api = `/customers/block/${customer_id}`;
+    api = `/customer/block/${customer_id}`;
   }
   axios
     .patch(api)
