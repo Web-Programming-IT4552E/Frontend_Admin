@@ -39,7 +39,6 @@ const formItemLayout = {
 };
 const ProductDetail = ({ match, t }) => {
   const categories = useSelector((state) => state.categories);
-  console.log(categories);
   const [form] = Form.useForm();
   const history = useHistory();
   const [data, setData] = useState();
@@ -379,17 +378,6 @@ const ProductDetail = ({ match, t }) => {
                 </Form.Item>
                 <Button type="primary" block htmlType="submit" className="mb-2">
                   {t("Update")}
-                </Button>
-                <Button
-                  type="primary"
-                  block
-                  htmlType="button"
-                  ghost
-                  onClick={() => {
-                    setIsConvert(true);
-                  }}
-                >
-                  {t("Convert to gift product")}
                 </Button>
               </Form>
             </CCardBody>

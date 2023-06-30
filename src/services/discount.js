@@ -7,7 +7,7 @@ import { getToken, getLazyToken } from "./auth";
 export function getListDiscounts(pagination, callback) {
   const axios = AxiosConfig();
   let api = "";
-  api = `/discount_code?page=${pagination.page || 1}&limit=${
+  api = `/discount-code?page=${pagination.page || 1}&limit=${
     pagination.limit || 100
   }`;
   axios
@@ -34,7 +34,7 @@ export function getListDiscounts(pagination, callback) {
 export function createDiscount(data, callback) {
   const axios = AxiosConfig();
   axios
-    .post(`/discount_code`, data)
+    .post(`/discount-code`, data)
     .then((res) => {
       callback(res);
     })
@@ -54,7 +54,7 @@ export function createDiscount(data, callback) {
 export function getDiscountDetail(discount_id, callback) {
   const axios = AxiosConfig();
   let api = "";
-  api = `/discount_code/${discount_id}`;
+  api = `/discount-code/${discount_id}`;
   axios
     .get(api)
     .then((res) => {
@@ -79,7 +79,7 @@ export function getDiscountDetail(discount_id, callback) {
 export function disableDiscountCode(discount_id, callback) {
   const axios = AxiosConfig();
   let api = "";
-  api = `/discount_code/${discount_id}`;
+  api = `/discount-code/${discount_id}`;
   axios
     .patch(api)
     .then((res) => {

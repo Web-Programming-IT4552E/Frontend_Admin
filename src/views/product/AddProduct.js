@@ -19,6 +19,7 @@ import { withNamespaces } from "react-i18next";
 import { createProduct } from "src/services/product";
 import { useHistory } from "react-router";
 import BaseHelper from "src/services/helper";
+import SubImages from "./SubImages";
 const formItemLayout = {
   labelCol: {
     xs: { span: 24 },
@@ -33,6 +34,7 @@ const AddProduct = ({ t }) => {
   const [form] = Form.useForm();
   const history = useHistory();
   const [avatarURL, setAvatarURL] = useState();
+  const [subImages, setSubImages] = useState([]);
   const categories = useSelector((state) => state.categories);
 
   const handleUploadAvatar = (e) => {
@@ -132,6 +134,16 @@ const AddProduct = ({ t }) => {
                 />
               )}
             </Upload>
+          </CCardHeader>
+          <CCardHeader
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <p>{t("Add Sub Images")}</p>
+            <SubImages subImages={subImages} setSubImages={setSubImages} />
           </CCardHeader>
           <CCardBody>
             <Form form={form} {...formItemLayout} onFinish={onFinish}>

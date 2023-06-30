@@ -49,7 +49,9 @@ const ListProduct = ({ t }) => {
     {
       title: t("Category"),
       dataIndex: "category",
-      render: (category) => <>{category.name}</>,
+      render: (category) => {
+        return <>{category.map((item) => item.name).join(", ")}</>;
+      },
     },
 
     {
@@ -202,10 +204,6 @@ const ListProduct = ({ t }) => {
     });
   }, [categories]);
 
-  useEffect(() => {
-    console.log(pagination);
-  }, [pagination]);
-
   return (
     <CRow>
       <CCol xs="12" md="12" className="mb-4">
@@ -226,7 +224,7 @@ const ListProduct = ({ t }) => {
                 <>
                   {categories.map((item, idx) => {
                     return (
-                      <Tabs.TabPane tab={item?.name} key={item?.slug}>
+                      <Tabs.TabPane tab={item?.name} key={item?._id}>
                         <React.Suspense
                           fallback={
                             <div className="d-flex justify-content-center">

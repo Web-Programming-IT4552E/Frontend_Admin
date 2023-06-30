@@ -76,7 +76,7 @@ export function getProductDetail(product_id, callback) {
 export function updateProduct(product_id, data, callback) {
   const axios = AxiosConfig();
   axios
-    .put(`/product/detail/${product_id}`, data)
+    .put(`/product/${product_id}`, data)
     .then((res) => {
       callback(res);
     })

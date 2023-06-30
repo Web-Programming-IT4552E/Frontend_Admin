@@ -84,31 +84,9 @@ const DiscountCodeDetail = ({ t }) => {
         new Date(res.data.expired_time),
         "HH:mm DD/MM/YYYY"
       );
-      res.data.customer_applying_condition = JSON.parse(
-        res.data.customer_applying_condition
-      ).map((item) => {
-        return { nestedFields: item };
-      });
-      try {
-        res.data.customer_applying_condition.forEach((item) => {
-          let conditionData = item.nestedFields;
-          conditionData.map((item) => {
-            if (item["object"] == "create_time") {
-              item["value"] = moment(item["value"]).format("HH:mm DD/MM/YYYY");
-            } else if (item["object"] == "status") {
-              item["value"] = Status.discount_status.find(
-                (itemStatus) => itemStatus.id == item["value"]
-              ).name;
-            } else {
-              item["value"] = Status.rank.find(
-                (itemStatus) => itemStatus.id == item["value"]
-              ).name;
-            }
-          });
-        });
-      } catch (err) {}
-      form.setFieldsValue(res.data);
+
       setDataDetail(res.data);
+      form.setFieldsValue(res.data);
     });
   }, [discount_id]);
 

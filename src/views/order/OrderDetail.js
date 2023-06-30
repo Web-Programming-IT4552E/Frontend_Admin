@@ -115,25 +115,22 @@ const OrderDetail = ({ match, t }) => {
   ];
   useEffect(() => {
     getOrderDetail(match.params.id, (res) => {
-      console.log(res);
       if (res.status == 200) {
         let submitData = {};
-        submitData.shipping_unit = res.data[0].shipping_unit;
-        submitData.shipping_code = res.data[0].shipping_code;
-        submitData.shipping_cost = res.data[0].shipping_cost
-          ? res.data[0].shipping_cost
+        submitData.shipping_unit = res.data.shipping_unit;
+        submitData.shipping_code = res.data.shipping_code;
+        submitData.shipping_cost = res.data.shipping_cost
+          ? res.data.shipping_cost
           : "0";
-        console.log(submitData);
         form.setFieldsValue({ ...submitData });
         setStatusName(
-          Status.products.filter((item) => item.id == res.data[0].status)[0]
-            .name
+          Status.products.filter((item) => item.id == res.data.status)[0].name
         );
         setStatusColor(
-          Status.products.filter((item) => item.id == res.data[0].status)[0]
-            .color
+          Status.products.filter((item) => item.id == res.data.status)[0].color
         );
-        setData(res.data[0]);
+        console.log("NFT Deal", res.data);
+        setData(res.data);
       } else {
         notification.error({
           message: t(`Notification`),
@@ -317,13 +314,6 @@ const OrderDetail = ({ match, t }) => {
                 name="payment_method"
               >
                 <p>{data?.payment_method}</p>
-              </Form.Item>
-              <Form.Item
-                label={t("Discount")}
-                labelAlign="left"
-                name="discount"
-              >
-                <p>{data?.discount ? t("Yes") : t("No")}</p>
               </Form.Item>
               <Form.Item
                 label={t("Discount")}

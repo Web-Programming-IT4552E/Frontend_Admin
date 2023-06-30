@@ -16,7 +16,9 @@ export function getListOrders(pagination, status, rangeTime, callback) {
     }&status=${status}`;
   }
   if (rangeTime) {
-    api = `${api}&start-end-time=${rangeTime}`;
+    api = `${api}&start_end_time=${rangeTime.split(" ")[0]}&end_time=${
+      rangeTime.split(" ")[1]
+    }`;
   }
   axios
     .get(api)
@@ -43,7 +45,7 @@ export function getOrderDetail(order_id, callback) {
   const axios = AxiosConfig();
 
   axios
-    .get(`${process.env.REACT_APP_API}orders/${order_id}`)
+    .get(`${process.env.REACT_APP_API}order/${order_id}`)
     .then((res) => {
       callback(res);
     })
@@ -64,7 +66,7 @@ export function confirmOrderDetail(order_id, data, callback) {
   const axios = AxiosConfig();
 
   axios
-    .patch(`${process.env.REACT_APP_API}orders/confirm/${order_id}`, data)
+    .patch(`${process.env.REACT_APP_API}order/confirm/${order_id}`, data)
     .then((res) => {
       callback(res);
     })
@@ -84,7 +86,7 @@ export function confirmOrderDetail(order_id, data, callback) {
 export function confirmSuccessOrderDetail(order_id, callback) {
   const axios = AxiosConfig();
   axios
-    .patch(`${process.env.REACT_APP_API}orders/success/${order_id}`)
+    .patch(`${process.env.REACT_APP_API}order/success/${order_id}`)
     .then((res) => {
       callback(res);
     })
@@ -105,7 +107,7 @@ export function cancelOrderDetail(order_id, callback) {
   const axios = AxiosConfig();
 
   axios
-    .delete(`${process.env.REACT_APP_API}orders/${order_id}`)
+    .delete(`${process.env.REACT_APP_API}order/${order_id}`)
     .then((res) => {
       callback(res);
     })

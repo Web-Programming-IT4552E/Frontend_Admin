@@ -57,7 +57,7 @@ const CreateDiscountCode = ({ t }) => {
             customer_applying_condition: dataApplyingCondition,
           },
           (res) => {
-            if (res.status === 200) {
+            if ([200, 201, 202, 203, 204].includes(res.status)) {
               notification.success({
                 message: t(`Notification`),
                 description: `Create discount code successfully`,

@@ -195,9 +195,9 @@ const ListOrders = ({ t }) => {
   };
   const changeTime = (value) => {
     if (value && Object.keys(value).length == 2 && value[0] && value[1]) {
-      let finalTime = `${moment(value[0]).format("DD/MM/YYYY")}-${moment(
+      let finalTime = `${moment(value[0]).toISOString()} ${moment(
         value[1]
-      ).format("DD/MM/YYYY")}`;
+      ).toISOString()}`;
       setRangeTime(finalTime);
     } else {
       setRangeTime("");

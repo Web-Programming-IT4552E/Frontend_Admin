@@ -109,9 +109,7 @@ const ListDiscountCode = ({ t }) => {
       },
     },
   ];
-  useEffect(() => {
-    console.log(pagination);
-  }, [pagination]);
+
   const handleTableChange = (pagination, filters, sorter) => {
     let key = pagination.pageSize * (pagination.current - 1) + 1;
     getListDiscounts({ ...pagination, page: pagination.current }, (res) => {
@@ -147,7 +145,6 @@ const ListDiscountCode = ({ t }) => {
 
   useEffect(() => {
     getListDiscounts(pagination, (res) => {
-      console.log(res);
       if (res.status == 200 || res.status == 204) {
         let key = 1;
         if (Object.keys(res).length == 0) {
