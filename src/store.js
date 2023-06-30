@@ -1,14 +1,5 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
-import {
-  userReducer,
-  provinceReducer,
-  carTypeReducer,
-  servicesReducer,
-  airportReducer,
-  districtReducer,
-  notificationReducer,
-  categoryReducer,
-} from "src/reducers";
+import { userReducer, categoryReducer } from "src/reducers";
 import thunkMiddleware from "redux-thunk";
 
 const initialState = {
@@ -27,12 +18,6 @@ const changeState = (state = initialState, { type, ...rest }) => {
 const allReducers = combineReducers({
   changeState: changeState,
   user: userReducer,
-  provinces: provinceReducer,
-  carTypes: carTypeReducer,
-  districts: districtReducer,
-  services: servicesReducer,
-  airports: airportReducer,
-  notification: notificationReducer,
   categories: categoryReducer,
 });
 
