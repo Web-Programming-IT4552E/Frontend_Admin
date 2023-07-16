@@ -131,7 +131,7 @@ const Verify = ({ t }) => {
           </Form>
         </Col>
       </Row>
-      <div className={"footer"}>Candles in the wind</div>
+      <div className={"footer"}>Uray Store</div>
     </div>
   );
 };

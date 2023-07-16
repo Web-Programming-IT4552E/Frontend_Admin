@@ -6,7 +6,7 @@ const TheFooter = () => {
     <CFooter fixed={false}>
       <div>
         <a href="" target="_blank" rel="noopener noreferrer">
-          Candle in the wind
+          Uray
         </a>
         <span className="ml-1">&copy; 2022 phase 2</span>
       </div>
