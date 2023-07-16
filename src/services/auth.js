@@ -66,7 +66,7 @@ export function storeUserData(data) {
 
 export function getToken(callback) {
   axios
-    .post(`${process.env.REACT_APP_API}auth/refresh`, {
+    .post(`${process.env.REACT_APP_API}auth/refresh-token`, {
       accessToken: localStorage.getItem(
         `${process.env.REACT_APP_PREFIX_LOCAL}_access_token`
       ),
