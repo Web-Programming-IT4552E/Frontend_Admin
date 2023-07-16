@@ -75,7 +75,7 @@ const ListDiscountCode = ({ t }) => {
       title: t("Status"),
       dataIndex: "total_remaining",
       render: (total_remaining = 0) => {
-        let status = total_remaining == 0 ? 1 : 0;
+        let status = total_remaining == 0 ? 2 : 1;
         let color = Status.discount_status.filter(
           (item) => item.id == status
         )[0].color;
