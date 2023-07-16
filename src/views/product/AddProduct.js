@@ -135,7 +135,7 @@ const AddProduct = ({ t }) => {
               )}
             </Upload>
           </CCardHeader>
-          <CCardHeader
+          {/* <CCardHeader
             style={{
               display: "flex",
               justifyContent: "space-between",
@@ -144,7 +144,7 @@ const AddProduct = ({ t }) => {
           >
             <p>{t("Add Sub Images")}</p>
             <SubImages subImages={subImages} setSubImages={setSubImages} />
-          </CCardHeader>
+          </CCardHeader> */}
           <CCardBody>
             <Form form={form} {...formItemLayout} onFinish={onFinish}>
               <Form.Item

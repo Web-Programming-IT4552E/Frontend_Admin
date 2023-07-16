@@ -10,7 +10,7 @@ export function getProfile(callback) {
   const axiosConfig = AxiosConfig();
 
   axiosConfig
-    .get(`${process.env.REACT_APP_API}user`)
+    .get(`${process.env.REACT_APP_API}account`)
     .then((res) => {
       callback(res);
     })
@@ -30,7 +30,7 @@ export function getProfile(callback) {
 export function updateProfile(data, callback) {
   const axiosConfig = AxiosConfig();
   axiosConfig
-    .put(`${process.env.REACT_APP_API}user/change/profile`, data)
+    .put(`${process.env.REACT_APP_API}account/change/profile`, data)
     .then((res) => {
       callback(res);
     })
