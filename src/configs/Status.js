@@ -2,12 +2,18 @@ const Status = {
   discount_status: [
     {
       id: 0,
+      name: "New",
+      color: "lime",
+      text: "New",
+    },
+    {
+      id: 1,
       name: "Active",
       color: "green",
       text: "Active",
     },
     {
-      id: 1,
+      id: 2,
       name: "Inactive",
       color: "red",
       text: "Inactive",

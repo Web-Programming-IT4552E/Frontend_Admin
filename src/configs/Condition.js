@@ -6,4 +6,4 @@ export const compareList = [
   "less than",
   "less than or equal",
 ];
-export const selectFields = ["status", "create_time", "rank"];
+export const selectFields = ["status", "created_time", "rank"];
