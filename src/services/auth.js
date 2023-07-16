@@ -77,15 +77,16 @@ export function getToken(callback) {
     .then((res) => {
       localStorage.setItem(
         `${process.env.REACT_APP_PREFIX_LOCAL}_access_token`,
-        res.data.data.access_token
+        res.data.accessToken
       );
       localStorage.setItem(
         `${process.env.REACT_APP_PREFIX_LOCAL}_refresh_token`,
-        res.data.data.refresh_token
+        res.data.refreshToken
       );
       callback();
     })
     .catch((err) => {
+      console.log(err);
       if (err.response) {
         if (failTokens().includes(err.response.status)) {
           logOut();
