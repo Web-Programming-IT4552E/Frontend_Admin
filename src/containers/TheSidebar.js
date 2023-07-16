@@ -72,7 +72,7 @@ const TheSidebar = ({ navigation, t, tReady }) => {
               padding: "0px 8px",
             }}
           >
-            Candles in the wind
+            Uray
           </p>
         </a>
       </div>
