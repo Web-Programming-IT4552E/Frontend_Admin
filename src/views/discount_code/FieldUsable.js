@@ -33,8 +33,7 @@ const FieldUsable = ({ nestField, selectFields, compareList }) => {
       >
         <Select
           onChange={(e) => {
-            console.log(e);
-            if (e == "create_time") {
+            if (e == "created_time") {
               setIsDate(1);
             } else if (e == "status") {
               setIsDate(0);
