@@ -7,7 +7,6 @@ package-lock.json
 /coverage
 
 # production
-/build
 
 # misc
 .eslintcache
